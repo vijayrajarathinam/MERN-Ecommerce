@@ -1,0 +1,17 @@
+# Compiled Binary Addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependencies directory
+# https://www.nodejs.org/doc/misc/npm-faq.html#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+# Build folder
+build
+
+# Runtime data
+pids
+*.pids
+*.seed
+
+#packages
+package-lock.json

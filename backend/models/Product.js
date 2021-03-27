@@ -70,11 +70,16 @@ const productSchema = Schema({
   },
   reviews: [
     {
+      user: {
+        type: Schema.ObjectId,
+        ref: "user",
+        required: true,
+      },
       name: {
         type: String,
         required: true,
       },
-      ratating: {
+      rating: {
         type: Number,
         required: true,
         default: 0,
@@ -85,11 +90,6 @@ const productSchema = Schema({
       },
     },
   ],
-  user: {
-    type: Schema.ObjectId,
-    ref: "user",
-    required: true,
-  },
   createdAt: {
     type: Date,
     default: Date.now,
