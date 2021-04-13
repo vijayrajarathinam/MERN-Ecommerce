@@ -15,7 +15,7 @@ exports.all = catchAsync(async (req, res) => {
   const total = await Product.countDocuments();
   const apiResponse = new ApiUtils(Product.find(), req.query).search().filter().pagination(RESULT_PER_PAGE);
   const products = await apiResponse.query;
-  res.status(200).json({ success: true, total, count: products.length, data: products });
+  res.status(200).json({ success: true, total, count: products.length, data: products, resPerPage: RESULT_PER_PAGE });
 });
 
 exports.getOne = catchAsync(async (req, res, next) => {

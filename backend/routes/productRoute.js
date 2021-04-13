@@ -14,7 +14,7 @@ const { isAuthenticatedUser, authorizeRoles } = require("../middlewares/authenti
 router.route("/products").get(all).post(isAuthenticatedUser, authorizeRoles("admin"), create);
 
 router
-  .route("/product/:id")
+  .route("/products/:id")
   .get(getOne)
   .put(isAuthenticatedUser, authorizeRoles("admin"), update)
   .delete(isAuthenticatedUser, authorizeRoles("admin"), remove);
