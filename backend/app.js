@@ -1,10 +1,14 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+
 const app = express();
 
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+//import all reoutes
 const errorMiddleware = require("./middlewares/errors");
 const products = require("./routes/productRoute");
 const order = require("./routes/orderRoute");
